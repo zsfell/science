@@ -205,3 +205,6 @@ else
    getfenv().run:Disconnect()
     end
 end)
+local example = library:CreateWindow({
+    text = "MANTAP"
+  })
