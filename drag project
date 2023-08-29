@@ -76,7 +76,7 @@ end)
 while getfenv().test do
    task.wait()
     pcall(function()
-        if not game:GetService("Players").LocalPlayer.OwnedCars:FindSecondChild("Dukkati SuperSport S") then
+        if not game:GetService("Players").LocalPlayer.OwnedCars:FindFirstdChild("Dukkati SuperSport S") then
             game:GetService("ReplicatedStorage").KeteLoL.Beli:FireServer("Dukkati SuperSport S")
             wait()
         end
