@@ -28,7 +28,7 @@ game:GetService("VirtualUser"):CaptureController()
 game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 getfenv().grav = workspace.Gravity
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/ui%20libs"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zsfell/science/main/ui%20libs"))()
 local example = library:CreateWindow({
   text = "Drag Project"
 })
@@ -76,8 +76,8 @@ end)
 while getfenv().test do
    task.wait()
     pcall(function()
-        if not game:GetService("Players").LocalPlayer.OwnedCars:FindFirstChild("HondeEX5") then
-            game:GetService("ReplicatedStorage").KeteLoL.Beli:FireServer("HondeEX5")
+        if not game:GetService("Players").LocalPlayer.OwnedCars:FindSecondChild("Dukkati SuperSport S") then
+            game:GetService("ReplicatedStorage").KeteLoL.Beli:FireServer("Dukkati SuperSport S")
             wait()
         end
 if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
