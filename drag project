@@ -170,6 +170,24 @@ if game.Players.LocalPlayer.Character.Humanoid.SeatPart ~= nil then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame= spot
         end
 end)
+example:AddButton("Join Sentul", function(state)
+writefile("dragprojectTphelper.txt","queue_on_teleport".."[[".."game"..".".."TeleportService"..":".."Teleport".."(13970285340"..",game.Players.LocalPlayer)".."]]")
+game:GetService("TeleportService"):Teleport(11568403922)
+wait()
+queue_on_teleport[[
+repeat task.wait()
+until game:IsLoaded()
+readfile("dragprojectTphelper.txt")
+game:GetService("TeleportService"):Teleport(13970285340,game.Players.LocalPlayer)
+]]
+end)
+example:AddButton("Skip Loading Screen", function(state)
+local cam = workspace.Camera
+cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+cam.CameraType = Enum.CameraType.Custom
+game.Players.LocalPlayer.CameraMaxZoomDistance = 20
+game:GetService("Players").LocalPlayer.PlayerGui.Loading:Destroy()
+end)
  example:AddToggle("Click Teleport", function(state)
     getfenv().clickteleport = (state and true or false)
 if getfenv().clickteleport == true then
@@ -188,64 +206,5 @@ else
     end
 end)
 local example = library:CreateWindow({
-  text = "Misc"
-})
-example:AddLabel("Player Speed Changer",function()
-end)
-example:AddBox("Enter Speed Value", function(object, focus)
-  if focus then
- 
-      getfenv().mood = tostring(object.Text)
-  end
-end)
-example:AddToggle("Speed Enabler", function(state)
-getfenv().speedster = (state and true or false)
-while getfenv().speedster do
-    task.wait()
-    pcall(function()
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = getfenv().mood
-    end)
-    end
-end)
-example:AddToggle("Infinite Jump", function(state)
-getfenv().infjump = (state and true or false)
-while getfenv().infjump do
-    task.wait()
-if game.Players.LocalPlayer.Character.Humanoid.Jump == true then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(3)
-end
-end
-end)
-example:AddLabel("Gravity Changer",function()
-end)
-example:AddBox("Enter Gravity Value", function(object, focus)
-  if focus then
- 
-      code = tonumber(object.Text)
-      workspace.Gravity = code
-  end
-end)      
-example:AddButton("reset gravity", function(state)
-workspace.Gravity = getfenv().grav
-end)
-local example = library:CreateWindow({
     text = "Misc"
   })
-example:AddButton("Skip Loading Screen", function(state)
-local cam = workspace.Camera
-cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-cam.CameraType = Enum.CameraType.Custom
-game.Players.LocalPlayer.CameraMaxZoomDistance = 20
-game:GetService("Players").LocalPlayer.PlayerGui.Loading:Destroy()
-end)
-example:AddButton("Join Sentul", function(state)
-writefile("dragprojectTphelper.txt","queue_on_teleport".."[[".."game"..".".."TeleportService"..":".."Teleport".."(13970285340"..",game.Players.LocalPlayer)".."]]")
-game:GetService("TeleportService"):Teleport(11568403922)
-wait()
-queue_on_teleport[[
-repeat task.wait()
-until game:IsLoaded()
-readfile("dragprojectTphelper.txt")
-game:GetService("TeleportService"):Teleport(13970285340,game.Players.LocalPlayer)
-]]
-end)
