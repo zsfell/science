@@ -203,8 +203,4 @@ else
     end)
     elseif getfenv().clickteleport == false then
    getfenv().run:Disconnect()
-    end
-end)
-local example = library:CreateWindow({
-    text = "MANTAP"
-  })
+    end)
